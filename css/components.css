@@ -1,0 +1,26 @@
+/*
+* Author: Ayon Ghosh
+* Date: 6 March 2015
+*/
+
+/* Star rating component */
+.rating {
+    display: inline-block;
+    float: right;
+    width: 30%;
+}
+
+.rating ul {
+    display: inline-block;
+    padding: 0;
+}
+
+.rating li {
+    list-style: none;
+    display: inline-block;
+    color: #888;
+}
+
+.rating li.active {
+    color: #e9ce18;
+}

@@ -1,0 +1,94 @@
+/*
+* Author: Ayon Ghosh
+* Date: 6 March 2015
+*/
+
+.main {
+    font-family: sans-serif;
+    text-align: center;
+    padding: 30px;
+}
+
+.search {
+    margin: 20px;
+}
+
+#search {
+    font-size: 18px;
+    position: relative;
+    top: 3px;
+    padding: 5px;
+}
+
+#search-btn {
+    font-size: 15px;
+    background-color: #9197a3;
+    color: #fff;
+    border-radius: 2px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.result-count {
+    font-size: 12px;
+}
+
+.result-name {
+    font-size: 16px;
+    color: #333;
+    padding: 5px 0;
+}
+
+.result-category {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.search-results {
+    padding: 0;
+    list-style: none;
+    text-align: left;
+}
+
+.result {
+    border: 1px solid #666;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    font-family: sans-serif;
+    background-color: #f8f8f8;
+    cursor: pointer;
+}
+
+.field {
+    padding: 5px;
+}
+
+.about {
+    font-weight: bold;
+}
+
+.desc {
+    font-size: 12px;
+    font-style: italic;
+}
+
+.cover {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.details {
+    height: 0px;
+    transition: all 1s;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    overflow: scroll;
+}
+
+.result-title {
+    display: inline-block;
+    width: 70%;
+}
+

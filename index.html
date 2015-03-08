@@ -1,0 +1,82 @@
+<!--
+    Author: Ayon Ghosh
+    Date: 6 March 2015
+-->
+
+<html>
+    <head>
+        <title>Facebook Page Search</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="css/components.css"/>
+    </head>
+    <body>
+        <div class="main">
+            <div class="search">
+                <div>Search for Facebook pages</div>
+                <input type="text" id="search" />
+                <a id="search-btn">Search</a>
+            </div>
+            <div id="results-list"></div>
+        </div>
+        
+        <!-- Template for showing list of search results -->
+        <script type="text/html" id="result-list-tmpl">
+            <div class="result-count">
+                Found <%=results.length%> result(s)
+            </div>
+            <ul class="search-results">
+            <% for (var i = 0; i < results.length; i++) { %>
+                <li class="result" id="<%=i%>" data-id="<%=results[i].id%>">
+                    <div class="result-title">
+                        <div class="result-name"><%=results[i].name%></div>
+                        <div class="result-category"><%=results[i].category%></div>
+                    </div>
+                    <%=app.utils.tmpl(document.getElementById('rating').innerHTML, {'data':{'rating': results[i].rating, 'callback':'app.components.starRating.onClick(event, app.main.rate)'}})%>
+                    <div class="details"></div>
+                </li>
+            <% } %>
+            </ul>
+        </script>
+          
+        <!-- Template for displaying details of a search result -->
+        <script type="text/html" id="page-details">
+            <div>
+                <% if (details.cover) { %>
+                    <div class="field cover">
+                        <img src="<%=details.cover.source%>" width="720px" height="266px"/>
+                    </div>
+                <% } %>
+                <div class="field">
+                    <span>Website: </span><a href="<%=details.website%>"><%=details.website%></a>
+                </div>
+                <div class="field about">
+                    <%=details.about%>
+                </div>
+                <div class="field desc">
+                    <%=details.description%>
+                </div>
+            </div>
+        </script>
+        
+                    
+        <!-- Template for the star rating component -->
+        <script type="text/html" id="rating">
+            <div class="rating" onClick="<%=data.callback%>">
+                <span>Rating: </span>
+                <ul>
+                    <li class="<%=data.rating > 0 ? 'active' : ''%>" data-val="1">★</li>
+                    <li class="<%=data.rating > 1 ? 'active' : ''%>" data-val="2">★</li>
+                    <li class="<%=data.rating > 2 ? 'active' : ''%>" data-val="3">★</li>
+                    <li class="<%=data.rating > 3 ? 'active' : ''%>" data-val="4">★</li>
+                    <li class="<%=data.rating > 4 ? 'active' : ''%>" data-val="5">★</li>
+                </ul>
+            </div>
+        </script>
+        
+        
+        <script src="js/components.js"></script>
+        <script src="js/utils.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
